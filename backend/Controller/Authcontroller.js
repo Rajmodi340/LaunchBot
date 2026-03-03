@@ -17,8 +17,8 @@ if(!user){
 const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" })
 res.cookie("token",token,{
     httpOnly:true,
-    secure:false,
-    sameSite:"strict",
+    secure:true,
+    sameSite:"none",
     maxAge:7*24*60*60*1000
 })
 res.status(200).json({message:"User created successfully",user,token})

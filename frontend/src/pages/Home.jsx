@@ -1,6 +1,6 @@
 import React from 'react'
 import {AnimatePresence, motion} from "motion/react"
-import Loginmodel from '../components/loginmodel'
+import Loginmodel from '../components/Loginmodel'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Coins } from "lucide-react"

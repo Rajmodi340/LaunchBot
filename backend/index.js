@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cookieParser())
 // enable CORS for frontend and allow credentials
 app.use(cors({
-    origin: "https://launchbot-7.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
 }))
 

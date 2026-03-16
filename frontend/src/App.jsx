@@ -10,7 +10,7 @@ import Generate from './pages/Generate'
 import Editor1 from './pages/Editor1'
 import LiveSite from './pages/LiveSite'
 import Price from './pages/Price'
-export const serverUrl="https://launchbot-pw86.onrender.com"
+export const serverUrl="http://localhost:8545"
 function App() {
   usergetcurrent()
 const {userData}=useSelector((state)=>state.user)

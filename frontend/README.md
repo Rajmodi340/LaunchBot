@@ -1,16 +1,47 @@
-# React + Vite
+# AI Builder - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend interface for the AI Builder project, built with modern web technologies to provide a rich, interactive user experience. It features an integrated code editor and dynamic UI components.
 
-Currently, two official plugins are available:
+## Key Concepts and Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Core Technologies
+- **React** (`react`, `react-dom`): Version 19 of the popular JavaScript library for building user interfaces.
+- **Vite** (`vite`): Next-generation frontend tooling providing rapid server start and ultra-fast hot module replacement (HMR).
+- **ES Modules**: Utilizes ES6 modules natively in the browser.
 
-## React Compiler
+### State Management & Routing
+- **Redux Toolkit** (`@reduxjs/toolkit`, `react-redux`): The official, opinionated, batteries-included toolset for efficient Redux development. Used for global state management.
+- **React Router** (`react-router-dom`): Standard library for routing in React, enabling navigation across various views.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Styling and UI
+- **Tailwind CSS v4** (`tailwindcss`, `@tailwindcss/vite`): A utility-first CSS framework for rapidly building custom UI designs inline.
+- **Lucide React** (`lucide-react`): A beautiful, consistent icon toolkit for modern UI design.
+- **Motion** (`motion`): Powerful animation library to create smooth, dynamic UI transitions and micro-interactions.
 
-## Expanding the ESLint configuration
+### Code Editor Integration
+- **Monaco Editor** (`@monaco-editor/react`, `monaco-editor`): The code editor that powers VS Code, integrated seamlessly into the React application for a full-featured code editing experience.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend-as-a-Service (BaaS) & API
+- **Firebase** (`firebase`): Integrated for backend services, such as authentication, real-time databases, or hosting, supplementing the custom Express backend.
+- **Axios** (`axios`): Promise-based HTTP client for the browser to communicate with backend APIs.
+
+### Code Quality & Formatting
+- **Prettier** (`prettier`): Opinionated code formatter to ensure consistent code style.
+- **JS Beautify** (`js-beautify`): Used to format and beautify JavaScript, HTML, and CSS source code.
+- **ESLint**: Linter setup configured for catching errors and enforcing patterns via plugins for React hooks and Fast Refresh.
+
+## Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Configure environment variables in a `.env` file for Firebase and backend API URLs.
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```

@@ -10,8 +10,10 @@ import { setUserData } from '../redux/userSlice'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import axios from 'axios'
+import usergetcurrent from '../hooks/usergetcurrent'
 function Home() {
   const navigate=useNavigate()
+  const { refetch } = usergetcurrent()
   const highlights=[
     "AI-Powered Website Generation",
     "Customizable Templates",
@@ -49,6 +51,27 @@ console.error("Error logging out:",error)
   }
   handlegetallwebsite()
     },[userData])
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+    if (sessionId && userData) {
+      const verifyPayment = async () => {
+        try {
+          await axios.post(`${serverUrl}/api/billing/verify`, { session_id: sessionId }, { withCredentials: true });
+          refetch(); // refetch user data
+          // remove session_id from URL
+          const url = new URL(window.location);
+          url.searchParams.delete('session_id');
+          window.history.replaceState(null, null, url);
+        } catch (error) {
+          console.error('Payment verification failed:', error);
+        }
+      };
+      verifyPayment();
+    }
+  }, [userData, refetch]);
+
   return (
     <div className='relative min-h-screen bg-[#040404] text-white overflow-hidden'>
    <motion.div

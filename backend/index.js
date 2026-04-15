@@ -10,7 +10,7 @@ import billingrouter from "./Routes/billingroute.js"
 import {stripeWebhook } from "./Controller/Stripewehbook.js"
 dotenv.config()
 const app=express()
-app.post("/api/stripe/wehbook",express.raw({type:"application/json"}),stripeWebhook)
+app.post("/api/stripe/webhook",express.raw({type:"application/json"}),stripeWebhook)
 app.use(express.json())
 app.use(cookieParser())
 // enable CORS for frontend and allow credentials

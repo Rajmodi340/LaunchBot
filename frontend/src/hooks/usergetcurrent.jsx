@@ -6,8 +6,7 @@ import { useDispatch } from 'react-redux'
 import { setUserData } from '../redux/userSlice'
 function usergetcurrent() {
   const dispatch=useDispatch()
-  useEffect(()=>{
-    const getcurrentuser=async()=>{
+  const getcurrentuser=async()=>{
 try{
 const result=await axios.get(`${serverUrl}/api/user/me`,{withCredentials:true})
 dispatch(setUserData(result.data))
@@ -17,8 +16,11 @@ catch(error){
 console.error("Error fetching current user:", error.message)
 }
     }
+  useEffect(()=>{
     getcurrentuser()
   },[])
+
+  return { refetch: getcurrentuser }
 }
 
 export default usergetcurrent
